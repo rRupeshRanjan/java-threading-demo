@@ -15,9 +15,9 @@ public class SingleThreadPoolExecutorService {
      * A thread pool with only one thread.
      * All the submitted tasks will be executed sequentially.
      */
-    public static void run() {
+    public static void runExecute() {
         System.out.println(
-                MessageFormat.format("[{0}]: Using Single threadpool executor service", new Date().toInstant()));
+                MessageFormat.format("[{0}]: Using Single threadpool - execute", new Date().toInstant()));
 
         List<Task> tasks = TaskUtils.getTasks("singleThreadPool");
 

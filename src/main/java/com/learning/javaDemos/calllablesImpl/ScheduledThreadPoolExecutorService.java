@@ -21,8 +21,8 @@ public class ScheduledThreadPoolExecutorService {
      * To schedule after 5 seconds: executorService.schedule(callable, 5, TimeUnit.SECONDS)
      */
     public static void run(int poolSize) throws InterruptedException, ExecutionException {
-        System.out.println(
-                MessageFormat.format("[{0}]: Using Scheduled threadpool - schedule", new Date().toInstant()));
+        System.out.println(MessageFormat.format("[{0}]: Using Scheduled threadpool with {1} threads - schedule",
+                new Date().toInstant(), poolSize));
 
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(poolSize);
         List<ScheduledFuture<Map<String, Integer>>> futures = new ArrayList<>();

@@ -9,8 +9,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class ScheduledThreadPoolExecutorService {
     /**
@@ -19,9 +17,9 @@ public class ScheduledThreadPoolExecutorService {
      * example:
      * To schedule after 5 seconds: executorService.schedule(callable, 5, TimeUnit.SECONDS)
      */
-    public static void run(int poolSize) throws InterruptedException, ExecutionException {
-        System.out.println(
-                MessageFormat.format("[{0}]: Using Scheduled threadpool executor service", new Date().toInstant()));
+    public static void runExecute(int poolSize) throws InterruptedException, ExecutionException {
+        System.out.println(MessageFormat.format("[{0}]: Using Scheduled threadpool with {1} threads - execute",
+                new Date().toInstant(), poolSize));
 
         List<Task> tasks = TaskUtils.getTasks("ScheduledThreadPool");
 

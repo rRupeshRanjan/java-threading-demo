@@ -20,7 +20,7 @@ public class SingleThreadScheduledThreadPoolExecutorService {
      * example:
      * To schedule after 5 seconds: executorService.schedule(callable, 5, TimeUnit.SECONDS)
      */
-    public static void run() throws InterruptedException, ExecutionException {
+    public static void runExecute() throws InterruptedException, ExecutionException {
         System.out.println(
                 MessageFormat.format("[{0}]: Using Scheduled threadpool executor service", new Date().toInstant()));
 

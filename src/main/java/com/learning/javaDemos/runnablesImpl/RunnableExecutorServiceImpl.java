@@ -3,17 +3,35 @@ package com.learning.javaDemos.runnablesImpl;
 import java.util.concurrent.ExecutionException;
 
 public class RunnableExecutorServiceImpl {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        SingleThreadPoolExecutorService.run();
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        RunnableExecutorServiceImpl service = new RunnableExecutorServiceImpl();
 
-        FixedThreadPoolExecutorService.run(2);
-        FixedThreadPoolExecutorService.run(5);
+        service.runSingleThreadExecutorService();
+        service.runFixedThreadPoolExecutorService();
+        service.runCachedThreadPoolExecutorService();
+        service.runScheduledThreadPoolExecutorService();
+        service.runSingleThreadScheduledThreadPoolExecutorService();
+    }
 
-        CachedThreadPoolExecutorService.run();
+    private void runSingleThreadExecutorService() throws ExecutionException, InterruptedException {
+        SingleThreadPoolExecutorService.runExecute();
+    }
 
-        ScheduledThreadPoolExecutorService.run(2);
-        ScheduledThreadPoolExecutorService.run(5);
+    private void runFixedThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+        FixedThreadPoolExecutorService.runExecute(2);
+        FixedThreadPoolExecutorService.runExecute(4);
+    }
 
-        SingleThreadScheduledThreadPoolExecutorService.run();
+    private void runCachedThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+        CachedThreadPoolExecutorService.runExecute();
+    }
+
+    private void runScheduledThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+        ScheduledThreadPoolExecutorService.runExecute(2);
+        ScheduledThreadPoolExecutorService.runExecute(4);
+    }
+
+    private void runSingleThreadScheduledThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+        SingleThreadScheduledThreadPoolExecutorService.runExecute();
     }
 }

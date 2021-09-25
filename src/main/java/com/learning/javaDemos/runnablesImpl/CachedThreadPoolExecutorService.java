@@ -16,9 +16,9 @@ public class CachedThreadPoolExecutorService {
      * The old available threads will be reused for the new tasks.
      * If a thread is not used during 60 seconds, it will be terminated and removed from the pool
      */
-    public static void run() throws InterruptedException, ExecutionException {
+    public static void runExecute() throws InterruptedException, ExecutionException {
         System.out.println(
-                MessageFormat.format("[{0}]: Using cached threadpool executor service", new Date().toInstant()));
+                MessageFormat.format("[{0}]: Using cached threadpool - execute", new Date().toInstant()));
 
         List<Task> tasks = TaskUtils.getTasks("CachedThreadPool");
 
