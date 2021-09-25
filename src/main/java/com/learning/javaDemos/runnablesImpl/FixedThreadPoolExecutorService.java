@@ -15,7 +15,7 @@ public class FixedThreadPoolExecutorService {
      * A thread pool with a fixed number of threads.
      * If a thread is not available for the task, the task is put in queue waiting for other task to end.
      */
-    public static void runExecute(int threads) throws InterruptedException, ExecutionException {
+    public static void runExecute(int threads) {
         System.out.println(MessageFormat.format("[{0}]: Using Fixed threadpool with {1} threads - execute",
                 new Date().toInstant(), threads));
 

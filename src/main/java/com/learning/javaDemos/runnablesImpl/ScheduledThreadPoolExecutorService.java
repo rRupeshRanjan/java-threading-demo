@@ -5,7 +5,6 @@ import com.learning.javaDemos.utils.TaskUtils;
 import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +16,7 @@ public class ScheduledThreadPoolExecutorService {
      * example:
      * To schedule after 5 seconds: executorService.schedule(callable, 5, TimeUnit.SECONDS)
      */
-    public static void runExecute(int poolSize) throws InterruptedException, ExecutionException {
+    public static void runExecute(int poolSize) {
         System.out.println(MessageFormat.format("[{0}]: Using Scheduled threadpool with {1} threads - execute",
                 new Date().toInstant(), poolSize));
 

@@ -1,9 +1,7 @@
 package com.learning.javaDemos.runnablesImpl;
 
-import java.util.concurrent.ExecutionException;
-
 public class RunnableExecutorServiceImpl {
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) {
         RunnableExecutorServiceImpl service = new RunnableExecutorServiceImpl();
 
         service.runSingleThreadExecutorService();
@@ -13,25 +11,25 @@ public class RunnableExecutorServiceImpl {
         service.runSingleThreadScheduledThreadPoolExecutorService();
     }
 
-    private void runSingleThreadExecutorService() throws ExecutionException, InterruptedException {
+    private void runSingleThreadExecutorService() {
         SingleThreadPoolExecutorService.runExecute();
     }
 
-    private void runFixedThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+    private void runFixedThreadPoolExecutorService() {
         FixedThreadPoolExecutorService.runExecute(2);
         FixedThreadPoolExecutorService.runExecute(4);
     }
 
-    private void runCachedThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+    private void runCachedThreadPoolExecutorService() {
         CachedThreadPoolExecutorService.runExecute();
     }
 
-    private void runScheduledThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+    private void runScheduledThreadPoolExecutorService() {
         ScheduledThreadPoolExecutorService.runExecute(2);
         ScheduledThreadPoolExecutorService.runExecute(4);
     }
 
-    private void runSingleThreadScheduledThreadPoolExecutorService() throws ExecutionException, InterruptedException {
+    private void runSingleThreadScheduledThreadPoolExecutorService() {
         SingleThreadScheduledThreadPoolExecutorService.runExecute();
     }
 }
