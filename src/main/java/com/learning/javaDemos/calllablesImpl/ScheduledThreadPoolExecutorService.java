@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 public class ScheduledThreadPoolExecutorService {
+    private static final HttpUtils httpUtils = HttpUtils.getInstance();
+    private static final List<String> urls = httpUtils.getUrls();
+
     /**
      * Method : Executors.newScheduledThreadPool()
      * A thread pool made to schedule future task.
@@ -19,10 +22,7 @@ public class ScheduledThreadPoolExecutorService {
      */
     public static void run(int poolSize) throws InterruptedException, ExecutionException {
         System.out.println(
-                MessageFormat.format("[{0}]: Using Scheduled threadpool executor service", new Date().toInstant()));
-
-        HttpUtils httpUtils = HttpUtils.getInstance();
-        List<String> urls = httpUtils.getUrls();
+                MessageFormat.format("[{0}]: Using Scheduled threadpool - schedule", new Date().toInstant()));
 
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(poolSize);
         List<ScheduledFuture<Map<String, Integer>>> futures = new ArrayList<>();
