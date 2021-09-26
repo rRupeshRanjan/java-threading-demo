@@ -1,5 +1,7 @@
 package com.learning.javaDemos.runnablesImpl;
 
+import com.learning.javaDemos.domain.Task;
+
 import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;

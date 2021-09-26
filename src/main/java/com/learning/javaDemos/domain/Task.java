@@ -1,4 +1,4 @@
-package com.learning.javaDemos.runnablesImpl;
+package com.learning.javaDemos.domain;
 
 import java.text.MessageFormat;
 import java.util.Date;
