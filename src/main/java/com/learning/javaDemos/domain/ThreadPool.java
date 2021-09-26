@@ -1,4 +1,4 @@
-package com.learning.javaDemos;
+package com.learning.javaDemos.domain;
 
 public enum ThreadPool {
     SINGLE_THREAD_POOL("singleThreadPool"),

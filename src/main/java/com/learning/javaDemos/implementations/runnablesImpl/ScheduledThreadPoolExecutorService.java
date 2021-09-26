@@ -1,4 +1,4 @@
-package com.learning.javaDemos.runnablesImpl;
+package com.learning.javaDemos.implementations.runnablesImpl;
 
 import com.learning.javaDemos.domain.Task;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static com.learning.javaDemos.ThreadPool.SCHEDULED_THREAD_POOL;
+import static com.learning.javaDemos.domain.ThreadPool.SCHEDULED_THREAD_POOL;
 
 public class ScheduledThreadPoolExecutorService {
 

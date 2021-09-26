@@ -1,4 +1,4 @@
-package com.learning.javaDemos.streamsImpl;
+package com.learning.javaDemos.implementations.streamsImpl;
 
 import com.learning.javaDemos.utils.HttpUtils;
 import com.learning.javaDemos.utils.ResponseUtils;

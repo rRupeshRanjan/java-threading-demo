@@ -1,4 +1,4 @@
-package com.learning.javaDemos.runnablesImpl;
+package com.learning.javaDemos.implementations.runnablesImpl;
 
 import com.learning.javaDemos.domain.TaskThread;
 

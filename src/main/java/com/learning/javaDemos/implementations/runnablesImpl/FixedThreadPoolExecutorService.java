@@ -1,4 +1,4 @@
-package com.learning.javaDemos.runnablesImpl;
+package com.learning.javaDemos.implementations.runnablesImpl;
 
 import com.learning.javaDemos.domain.Task;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static com.learning.javaDemos.ThreadPool.FIXED_THREAD_POOL;
+import static com.learning.javaDemos.domain.ThreadPool.FIXED_THREAD_POOL;
 
 public class FixedThreadPoolExecutorService {
 

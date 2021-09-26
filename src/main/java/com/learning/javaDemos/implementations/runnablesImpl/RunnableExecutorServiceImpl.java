@@ -1,4 +1,4 @@
-package com.learning.javaDemos.runnablesImpl;
+package com.learning.javaDemos.implementations.runnablesImpl;
 
 public class RunnableExecutorServiceImpl {
     public static void main(String[] args) {
