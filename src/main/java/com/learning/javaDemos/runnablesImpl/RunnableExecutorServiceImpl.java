@@ -13,23 +13,28 @@ public class RunnableExecutorServiceImpl {
 
     private void runSingleThreadExecutorService() {
         SingleThreadPoolExecutorService.runExecute();
+        SingleThreadPoolExecutorService.runSubmit();
     }
 
     private void runFixedThreadPoolExecutorService() {
         FixedThreadPoolExecutorService.runExecute(2);
         FixedThreadPoolExecutorService.runExecute(4);
+
+        FixedThreadPoolExecutorService.runSubmit(2);
+        FixedThreadPoolExecutorService.runSubmit(4);
     }
 
     private void runCachedThreadPoolExecutorService() {
         CachedThreadPoolExecutorService.runExecute();
+        CachedThreadPoolExecutorService.runSubmit();
     }
 
     private void runScheduledThreadPoolExecutorService() {
-        ScheduledThreadPoolExecutorService.runExecute(2);
-        ScheduledThreadPoolExecutorService.runExecute(4);
+        ScheduledThreadPoolExecutorService.run(2);
+        ScheduledThreadPoolExecutorService.run(4);
     }
 
     private void runSingleThreadScheduledThreadPoolExecutorService() {
-        SingleThreadScheduledThreadPoolExecutorService.runExecute();
+        SingleThreadScheduledThreadPoolExecutorService.run();
     }
 }

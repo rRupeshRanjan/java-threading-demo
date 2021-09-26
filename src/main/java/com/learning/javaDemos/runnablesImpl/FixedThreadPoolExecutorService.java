@@ -1,15 +1,15 @@
 package com.learning.javaDemos.runnablesImpl;
 
-import com.learning.javaDemos.utils.TaskUtils;
-
 import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static com.learning.javaDemos.ThreadPool.FIXED_THREAD_POOL;
+
 public class FixedThreadPoolExecutorService {
+
     /**
      * Method : Executors.newFixedThreadPool()
      * A thread pool with a fixed number of threads.
@@ -19,10 +19,23 @@ public class FixedThreadPoolExecutorService {
         System.out.println(MessageFormat.format("[{0}]: Using Fixed threadpool with {1} threads - execute",
                 new Date().toInstant(), threads));
 
-        List<Task> tasks = TaskUtils.getTasks("FixedThreadPool");
+        ExecutorService executorService = Executors.newFixedThreadPool(threads);
+
+        List<Task> tasks = Task.getTasksWithType(FIXED_THREAD_POOL.getLabel());
+
+        tasks.forEach(executorService::execute);
+        executorService.shutdown();
+    }
+
+    public static void runSubmit(int threads) {
+        System.out.println(MessageFormat.format("[{0}]: Using Fixed threadpool with {1} threads - submit",
+                new Date().toInstant(), threads));
 
         ExecutorService executorService = Executors.newFixedThreadPool(threads);
-        tasks.forEach(executorService::execute);
+
+        List<Runnable> runnables = Task.getRunnables(FIXED_THREAD_POOL.getLabel());
+
+        runnables.forEach(executorService::submit);
         executorService.shutdown();
     }
 }

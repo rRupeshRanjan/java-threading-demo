@@ -1,14 +1,16 @@
 package com.learning.javaDemos.runnablesImpl;
 
-import com.learning.javaDemos.utils.TaskUtils;
-
 import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static com.learning.javaDemos.ThreadPool.CACHED_THREAD_POOL;
+import static com.learning.javaDemos.ThreadPool.FIXED_THREAD_POOL;
+
 public class CachedThreadPoolExecutorService {
+
     /**
      * Method : Executors.newCachedThreadPool()
      * A thread pool that creates as many threads it needs to execute the task in parallel.
@@ -19,11 +21,23 @@ public class CachedThreadPoolExecutorService {
         System.out.println(
                 MessageFormat.format("[{0}]: Using cached threadpool - execute", new Date().toInstant()));
 
-        List<Task> tasks = TaskUtils.getTasks("CachedThreadPool");
+        ExecutorService executorService = Executors.newCachedThreadPool();
+
+        List<Task> tasks = Task.getTasksWithType(CACHED_THREAD_POOL.getLabel());
+
+        tasks.forEach(executorService::execute);
+        executorService.shutdown();
+    }
+
+    public static void runSubmit() {
+        System.out.println(
+                MessageFormat.format("[{0}]: Using cached threadpool - submit", new Date().toInstant()));
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        tasks.forEach(executorService::execute);
 
+        List<Runnable> runnables = Task.getRunnables(FIXED_THREAD_POOL.getLabel());
+
+        runnables.forEach(executorService::submit);
         executorService.shutdown();
     }
 }
